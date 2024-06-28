@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="splash_button" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="cornerRadius">20dp</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+    </style>
+</resources>

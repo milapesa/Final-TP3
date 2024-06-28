@@ -2,4 +2,7 @@
     <string name="app_name">Final-TP3</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="splash_header">¡A Comer!</string>
+    <string name="splash_caption">Tus comidas favoritas directo a casa</string>
+    <string name="splash_button">Pedir Ahora</string>
 </resources>
