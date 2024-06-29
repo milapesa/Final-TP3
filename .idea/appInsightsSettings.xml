@@ -8,10 +8,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.example.final_tp3" />
+                  <option name="mobileSdkAppId" value="1:695335380589:android:6d83a39579ceb35105c164" />
+                  <option name="projectId" value="final-tp3-kotlin" />
+                  <option name="projectNumber" value="695335380589" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />

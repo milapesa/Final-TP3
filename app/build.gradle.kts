@@ -5,6 +5,7 @@ plugins {
     id ("kotlin-kapt")
     id ("dagger.hilt.android.plugin")
     id ("org.jetbrains.kotlin.plugin.serialization")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -48,7 +49,6 @@ android {
     buildFeatures{
         viewBinding = true
     }
-
 }
 
 dependencies {

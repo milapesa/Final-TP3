@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "695335380589",
+    "project_id": "final-tp3-kotlin",
+    "storage_bucket": "final-tp3-kotlin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695335380589:android:6d83a39579ceb35105c164",
+        "android_client_info": {
+          "package_name": "com.example.final_tp3"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDIn6w2XvOIu2JvcCxEkMqvTckSQROTXUQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
