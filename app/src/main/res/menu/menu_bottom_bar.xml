@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_menu_home"
         android:title="Listado" />
     <item
-        android:id="@+id/menuHistoricoButton"
+        android:id="@+id/navFragOrder"
         android:icon="@drawable/ic_menu_historico"
         android:title="Historico" />
 </menu>
