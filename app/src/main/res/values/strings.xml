@@ -5,4 +5,6 @@
     <string name="splash_header">¡A Comer!</string>
     <string name="splash_caption">Tus comidas favoritas directo a casa</string>
     <string name="splash_button">Pedir Ahora</string>
+    <string name="hometitle">Listado Disponible</string>
+    <string name="all_items">All</string>
 </resources>
