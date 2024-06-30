@@ -2,12 +2,15 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginStart="30dp"
+    android:layout_marginTop="14dp"
+    android:layout_marginEnd="30dp"
     app:cardCornerRadius="15dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="310dp"
+        android:layout_width="match_parent"
         android:layout_height="100dp">
 
         <include
@@ -21,7 +24,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/layItemCanteenName"
+            android:id="@+id/layItemMenuName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"
@@ -33,7 +36,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/layItemCanteenRate"
+            android:id="@+id/layItemMenuPrice"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="17dp"
@@ -41,10 +44,10 @@
             android:fontFamily="@font/poppins"
             android:text="$$$"
             app:layout_constraintStart_toEndOf="@+id/include"
-            app:layout_constraintTop_toBottomOf="@+id/layItemCanteenName" />
+            app:layout_constraintTop_toBottomOf="@+id/layItemMenuName" />
 
         <ImageButton
-            android:id="@+id/layItemCanteenLike"
+            android:id="@+id/layItemMenuLike"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
