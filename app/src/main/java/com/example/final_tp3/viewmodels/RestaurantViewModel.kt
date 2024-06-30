@@ -28,7 +28,7 @@ class RestaurantViewModel : ViewModel() {
                 for (document in task) {
                     val restaurant = document.toObject(Restaurant::class.java)
                     restaurantList.add(restaurant)
-                    Log.d("firebase", "Fetched restaurant: ${restaurant.Name}")
+                    Log.d("firebase", "Fetched restaurant: ${restaurantList[0]}")
                 }
                 _restaurants.value = restaurantList
             }
