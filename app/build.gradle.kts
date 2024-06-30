@@ -66,6 +66,12 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
 
+    // Add the dependency for the Firebase SDK
+    implementation("com.google.firebase:firebase-analytics-ktx")
+    implementation(libs.firebase.database.ktx)
+    implementation(platform("com.google.firebase:firebase-bom:32.3.1"))
+    implementation(platform("com.google.firebase:firebase-firestore-ktx"))
+
     //Okhttp
     implementation("com.squareup.okhttp3:okhttp:4.12.0")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
