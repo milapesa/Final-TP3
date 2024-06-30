@@ -7,14 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.SearchView
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.final_tp3.adapters.FoodTypeAdapter
 import com.example.final_tp3.adapters.RestaurantAdapter
 import com.example.final_tp3.data.Restaurant
 import com.example.final_tp3.databinding.FragmentFragHomeBinding
+import com.example.final_tp3.listeners.OnClickItemListener
 import com.example.final_tp3.viewmodels.RestaurantViewModel
 
-class FragHome : Fragment() {
+class FragHome : Fragment(), OnClickItemListener {
 
     private lateinit var binding: FragmentFragHomeBinding
     private lateinit var restaurantAdapter: RestaurantAdapter
@@ -39,7 +41,7 @@ class FragHome : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        restaurantAdapter = RestaurantAdapter(filteredRestaurants)
+        restaurantAdapter = RestaurantAdapter(filteredRestaurants,this)
         binding.RestaurantListRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.RestaurantListRecyclerView.adapter = restaurantAdapter
 
@@ -86,5 +88,9 @@ class FragHome : Fragment() {
                     it.Name.lowercase().contains(query)
         })
         restaurantAdapter.notifyDataSetChanged()
+    }
+
+    override fun navigateToTripDetails(restaurant: Restaurant) {
+        findNavController().navigate(FragHomeDirections.actionFragHomeToFragOrder(restaurant))
     }
 }

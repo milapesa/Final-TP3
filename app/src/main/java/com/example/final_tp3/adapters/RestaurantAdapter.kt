@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.final_tp3.R
-import com.example.final_tp3.RestaurantHolder
+import com.example.final_tp3.holders.RestaurantHolder
 import com.example.final_tp3.data.Restaurant
-import com.example.final_tp3.databinding.LayItemRestaurantBinding
+import com.example.final_tp3.listeners.OnClickItemListener
 
 class RestaurantAdapter(
-    private val restaurants: MutableList<Restaurant>
+    private val restaurants: MutableList<Restaurant>,
+    private val clickListener : OnClickItemListener
 ) : RecyclerView.Adapter<RestaurantHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.lay_item_restaurant,parent,false)
@@ -23,6 +24,10 @@ class RestaurantAdapter(
         holder.setName(restaurant.Name)
         holder.setRate(restaurant.Rate)
         holder.setImg(restaurant.Img)
+        holder.navigateToRestaurantDetails().setOnClickListener{
+            clickListener.navigateToTripDetails(restaurant)
+        }
+
     }
 
 
