@@ -20,7 +20,7 @@
         android:label="fragment_frag_order"
         tools:layout="@layout/fragment_frag_order" >
         <argument
-            android:name="Restaurant"
+            android:name="restaurant"
             app:argType="com.example.final_tp3.data.Restaurant" />
     </fragment>
 </navigation>

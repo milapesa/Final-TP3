@@ -4,6 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Restaurant(
+    val id : String = "",
     val Name: String = "",
     val Type: String = "",
     val Rate: Double = 0.0,
@@ -13,12 +14,14 @@ data class Restaurant(
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
+        parcel.readString() ?: "",
         parcel.readDouble(),
         parcel.readString() ?: "",
         parcel.createTypedArrayList(Menu.CREATOR) ?: listOf()
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(id)
         parcel.writeString(Name)
         parcel.writeString(Type)
         parcel.writeDouble(Rate)
