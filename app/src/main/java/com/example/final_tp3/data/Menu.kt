@@ -4,13 +4,15 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Menu(
+    override var id: String= "",
     val idRestaurant: String = "",
     val item: String = "",
     val price: Double = 0.0,
-    val saved: Boolean = false,
-    val img: String = ""
-) : Parcelable {
+    override var saved: Boolean = false,
+    val img: String = "",
+) : Parcelable, Saveable(){
     constructor(parcel: Parcel) : this(
+        parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readDouble(),
@@ -20,6 +22,7 @@ data class Menu(
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(id)
         parcel.writeString(idRestaurant)
         parcel.writeString(item)
         parcel.writeDouble(price)

@@ -4,15 +4,16 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Restaurant(
-    val id: String = "",
+    override var id: String = "",
     val Name: String = "",
     val Type: String = "",
     val Rate: Double = 0.0,
     val Img: String = "",
     val menu: List<Menu>? = listOf(),
     val delay: String ="",
-    val ubication: String = ""
-) : Parcelable {
+    val ubication: String = "",
+    override var saved: Boolean = false,
+) : Parcelable, Saveable() {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readString() ?: "",

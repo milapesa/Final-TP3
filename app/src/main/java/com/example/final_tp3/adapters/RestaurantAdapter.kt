@@ -7,10 +7,12 @@ import com.example.final_tp3.R
 import com.example.final_tp3.holders.RestaurantHolder
 import com.example.final_tp3.data.Restaurant
 import com.example.final_tp3.listeners.OnClickItemListener
+import com.example.final_tp3.listeners.OnClickSaveItem
 
 class RestaurantAdapter(
     private val restaurants: MutableList<Restaurant>,
-    private val clickListener : OnClickItemListener
+    private val clickListener : OnClickItemListener,
+    private val saveListener : OnClickSaveItem
 ) : RecyclerView.Adapter<RestaurantHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.lay_item_restaurant,parent,false)
@@ -27,6 +29,11 @@ class RestaurantAdapter(
         holder.navigateToRestaurantDetails().setOnClickListener{
             clickListener.navigateToTripDetails(restaurant)
         }
+
+        holder.saveRestaurant().setOnClickListener{
+            saveListener.saveItem(restaurant)
+        }
+        holder.saveRestaurant().setImageResource(if(restaurant.saved) R.drawable.ic_heart_fill else R.drawable.ic_heart_empty)
 
     }
 

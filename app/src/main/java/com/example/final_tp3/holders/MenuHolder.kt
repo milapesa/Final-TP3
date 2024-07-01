@@ -1,6 +1,7 @@
 package com.example.final_tp3.holders
 
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -29,4 +30,6 @@ class MenuHolder(v: View) : RecyclerView.ViewHolder(v) {
         val imgView = view.findViewById<ImageView>(R.id.itemImgPic)
         Glide.with(view.context).load(image).centerCrop().into(imgView)
     }
+
+    fun saveMenu() = view.findViewById<ImageButton>(R.id.layItemMenuLike)
 }

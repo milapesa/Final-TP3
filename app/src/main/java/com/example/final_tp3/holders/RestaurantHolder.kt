@@ -1,6 +1,7 @@
 package com.example.final_tp3.holders
 
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
@@ -31,4 +32,6 @@ class RestaurantHolder(v: View): RecyclerView.ViewHolder(v){
     }
 
     fun navigateToRestaurantDetails() = view.findViewById<CardView>(R.id.layItemRestaurantCard)
+
+    fun saveRestaurant() = view.findViewById<ImageButton>(R.id.layItemRestaurantLike)
 }

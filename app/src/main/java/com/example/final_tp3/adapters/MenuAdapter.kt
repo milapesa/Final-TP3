@@ -6,9 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.final_tp3.R
 import com.example.final_tp3.data.Menu
 import com.example.final_tp3.holders.MenuHolder
+import com.example.final_tp3.listeners.OnClickSaveItem
 
 class MenuAdapter(
-    private val menus: MutableList<Menu>
+    private val menus: MutableList<Menu>,
+    private val saveListener : OnClickSaveItem
 ): RecyclerView.Adapter<MenuHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MenuHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.lay_item_menu,parent,false)
@@ -22,5 +24,9 @@ class MenuAdapter(
         holder.setName(menu.item)
         holder.setPrice(menu.price)
         holder.setImg(menu.img)
+        holder.saveMenu().setOnClickListener {
+            saveListener.saveItem(menu)
+        }
+        holder.saveMenu().setImageResource(if(menu.saved) R.drawable.ic_saved_menu else R.drawable.ic_not_saved_menu)
     }
 }

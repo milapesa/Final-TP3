@@ -1,4 +1,4 @@
-package com.example.final_tp3.config
+package com.example.final_tp3.objets
 
 object Config {
     const val RESTAURANTS_COLECCTION = "Restaurants"

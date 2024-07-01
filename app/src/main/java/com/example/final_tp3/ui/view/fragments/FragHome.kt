@@ -40,8 +40,9 @@ class FragHome : Fragment(), OnClickItemListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        restaurantViewModel = ViewModelProvider(this).get(RestaurantViewModel::class.java)
 
-        restaurantAdapter = RestaurantAdapter(filteredRestaurants,this)
+        restaurantAdapter = RestaurantAdapter(filteredRestaurants,this, restaurantViewModel)
         binding.RestaurantListRecyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.RestaurantListRecyclerView.adapter = restaurantAdapter
 
@@ -55,7 +56,7 @@ class FragHome : Fragment(), OnClickItemListener {
         setupSearchView()
 
         // Initialize ViewModel and observe data
-        restaurantViewModel = ViewModelProvider(this).get(RestaurantViewModel::class.java)
+
         restaurantViewModel.restaurants.observe(viewLifecycleOwner) { restaurants ->
             restaurants?.let {
                 filteredRestaurants.clear()
