@@ -8,15 +8,6 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerOrder"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline3" />
-
     <ImageView
         android:id="@+id/layOrderBackground"
         android:layout_width="0dp"
@@ -38,10 +29,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerOrder"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/layOrderTitleCanteen"
+            android:id="@+id/layOrderTitleRestaurant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="29dp"
@@ -61,7 +62,7 @@
             android:layout_marginTop="17dp"
             android:src="@drawable/ic_map"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layOrderTitleCanteen" />
+            app:layout_constraintTop_toBottomOf="@+id/layOrderTitleRestaurant" />
 
         <ImageView
             android:id="@+id/layIcClock"
@@ -74,7 +75,7 @@
             app:layout_constraintTop_toBottomOf="@+id/layIcMap" />
 
         <TextView
-            android:id="@+id/layOrderUbiCanteen"
+            android:id="@+id/layOrderUbiRestaurant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -83,10 +84,10 @@
             android:text="Ubication 0000"
             android:textColor="@color/smoky_black"
             app:layout_constraintStart_toEndOf="@+id/layIcMap"
-            app:layout_constraintTop_toBottomOf="@+id/layOrderTitleCanteen" />
+            app:layout_constraintTop_toBottomOf="@+id/layOrderTitleRestaurant" />
 
         <TextView
-            android:id="@+id/layOrderDelayCanteen"
+            android:id="@+id/layOrderDelayRestaurant"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -95,7 +96,7 @@
             android:text="00 Minutes - Remaining"
             android:textColor="@color/smoky_black"
             app:layout_constraintStart_toStartOf="@+id/guideline2"
-            app:layout_constraintTop_toBottomOf="@+id/layOrderUbiCanteen" />
+            app:layout_constraintTop_toBottomOf="@+id/layOrderUbiRestaurant" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
@@ -115,7 +116,7 @@
             android:textColor="@color/smoky_black"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layOrderDelayCanteen" />
+            app:layout_constraintTop_toBottomOf="@+id/layOrderDelayRestaurant" />
 
         <ImageButton
             android:id="@+id/layOrderButtonLike"
