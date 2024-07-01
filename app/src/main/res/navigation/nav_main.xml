@@ -12,7 +12,8 @@
         tools:layout="@layout/fragment_frag_home" >
         <action
             android:id="@+id/action_fragHome_to_fragOrder"
-            app:destination="@id/navFragOrder" />
+            app:destination="@id/navFragOrder"
+            app:popUpTo="@id/navFragOrder" />
     </fragment>
     <fragment
         android:id="@+id/navFragOrder"
@@ -22,5 +23,8 @@
         <argument
             android:name="restaurant"
             app:argType="com.example.final_tp3.data.Restaurant" />
+        <action
+            android:id="@+id/action_navFragOrder_to_navFragHome"
+            app:destination="@id/navFragHome" />
     </fragment>
 </navigation>

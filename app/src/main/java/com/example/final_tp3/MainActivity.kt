@@ -1,6 +1,8 @@
 package com.example.final_tp3
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -24,9 +26,14 @@ class MainActivity : AppCompatActivity() {
 
         Firebase.initialize(this) // This line
 
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding.root)
+
+        binding.floatingActionButton.setOnClickListener {
+            recreate()
+        }
 
         bottomNavigation = findViewById(R.id.bottom_bar)
 

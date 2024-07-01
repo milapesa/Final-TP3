@@ -6,7 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.ImageView
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.final_tp3.R
 import com.example.final_tp3.adapters.MenuAdapter
@@ -69,6 +72,10 @@ class FragOrder : Fragment() {
                 menuAdapter.notifyDataSetChanged()
             }
         }
+        binding.layOrderBtnBack.setOnClickListener {
+            findNavController().navigate(FragOrderDirections.actionNavFragOrderToNavFragHome())
+        }
+
 
         return root
     }
