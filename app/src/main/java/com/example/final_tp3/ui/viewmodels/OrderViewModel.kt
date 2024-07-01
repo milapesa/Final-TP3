@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.final_tp3.config.Config
 import com.example.final_tp3.data.Menu
 import com.example.final_tp3.data.Restaurant
 import com.google.firebase.firestore.ktx.firestore
@@ -18,14 +19,14 @@ class OrderViewModel() : ViewModel() {
     val idRestaurant = MutableLiveData<String>()
 
     init {
-        fetchRestaurants()
+        fetchMenus()
     }
 
-    private fun fetchRestaurants() {
+    private fun fetchMenus() {
         val db = Firebase.firestore
         val menusList = mutableListOf<Menu>()
 
-        db.collection("menus")
+        db.collection(Config.MENUS_COLECCTION)
             //.whereEqualTo("idRestaurant", idRestaurant.value)
             .get()
             .addOnSuccessListener { documents ->
@@ -42,6 +43,8 @@ class OrderViewModel() : ViewModel() {
                 Log.w("firebase", "Error getting documents: ", exception)
             }
     }
+
+
 
 
 }

@@ -75,6 +75,8 @@ class FragOrder : Fragment() {
 
     private fun preparateFragment(binding: FragmentFragOrderBinding) {
         binding.layOrderTitleRestaurant.text = restaurant.Name
+        binding.layOrderDelayRestaurant.text = restaurant.delay
+        binding.layOrderUbiRestaurant.text = restaurant.ubication
         binding.recyclerOrder.setHasFixedSize(true)
         binding.recyclerOrder.layoutManager = LinearLayoutManager(context)
     }

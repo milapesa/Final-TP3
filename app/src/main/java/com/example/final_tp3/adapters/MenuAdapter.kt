@@ -20,8 +20,7 @@ class MenuAdapter(
     override fun onBindViewHolder(holder: MenuHolder, position: Int) {
         val menu = menus[position]
         holder.setName(menu.item)
-        //TODO
-//        holder.setPrice(menu.Price)
-//        holder.setImg(menu.Img)
+        holder.setPrice(menu.price)
+        holder.setImg(menu.img)
     }
 }

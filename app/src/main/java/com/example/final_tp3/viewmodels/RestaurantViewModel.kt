@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.final_tp3.config.Config
 import com.example.final_tp3.data.Restaurant
 import com.google.firebase.Firebase
 import com.google.firebase.firestore.firestore
@@ -22,7 +23,7 @@ class RestaurantViewModel : ViewModel() {
         val db = Firebase.firestore
         val restaurantList = mutableListOf<Restaurant>()
 
-        db.collection("Restaurants")
+        db.collection(Config.RESTAURANTS_COLECCTION)
             .get()
             .addOnSuccessListener { task ->
                 for (document in task) {
@@ -36,4 +37,6 @@ class RestaurantViewModel : ViewModel() {
                 Log.w("firebase", "Error getting documents.", exception)
             }
     }
+
+
 }

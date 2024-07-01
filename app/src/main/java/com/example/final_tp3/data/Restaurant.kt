@@ -4,12 +4,14 @@ import android.os.Parcel
 import android.os.Parcelable
 
 data class Restaurant(
-    val id : String = "",
+    val id: String = "",
     val Name: String = "",
     val Type: String = "",
     val Rate: Double = 0.0,
     val Img: String = "",
-    val menu: List<Menu> = listOf()
+    val menu: List<Menu>? = listOf(),
+    val delay: String ="",
+    val ubication: String = ""
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
@@ -17,7 +19,10 @@ data class Restaurant(
         parcel.readString() ?: "",
         parcel.readDouble(),
         parcel.readString() ?: "",
-        parcel.createTypedArrayList(Menu.CREATOR) ?: listOf()
+        parcel.createTypedArrayList(Menu.CREATOR) ?: listOf(),
+        parcel.readString() ?: "",
+        parcel.readString() ?: ""
+
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -27,6 +32,8 @@ data class Restaurant(
         parcel.writeDouble(Rate)
         parcel.writeString(Img)
         parcel.writeTypedList(menu)
+        parcel.writeString(delay)
+        parcel.writeString(ubication)
     }
 
     override fun describeContents(): Int {

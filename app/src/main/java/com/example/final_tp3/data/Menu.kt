@@ -7,13 +7,16 @@ data class Menu(
     val idRestaurant: String = "",
     val item: String = "",
     val price: Double = 0.0,
-    val saved: Boolean = false
+    val saved: Boolean = false,
+    val img: String = ""
 ) : Parcelable {
     constructor(parcel: Parcel) : this(
         parcel.readString() ?: "",
         parcel.readString() ?: "",
         parcel.readDouble(),
-        parcel.readByte() != 0.toByte()
+        parcel.readByte() != 0.toByte(),
+        parcel.readString() ?: ""
+
     )
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
@@ -21,6 +24,7 @@ data class Menu(
         parcel.writeString(item)
         parcel.writeDouble(price)
         parcel.writeByte(if (saved) 1 else 0)
+        parcel.writeString(img)
     }
 
     override fun describeContents(): Int {
