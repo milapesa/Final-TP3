@@ -1,13 +1,12 @@
-package com.example.final_tp3
+package com.example.final_tp3.ui.views.activities
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
+import com.example.final_tp3.R
 import com.example.final_tp3.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.Firebase
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        Firebase.initialize(this) // This line
+        Firebase.initialize(this)
 
 
         binding = ActivityMainBinding.inflate(layoutInflater)

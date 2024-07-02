@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navFragHome"
-        android:name="com.example.final_tp3.ui.view.fragments.FragHome"
+        android:name="com.example.final_tp3.ui.views.fragments.FragHome"
         android:label="fragment_frag_home"
         tools:layout="@layout/fragment_frag_home" >
         <action
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/navFragOrder"
-        android:name="com.example.final_tp3.ui.view.fragments.FragOrder"
+        android:name="com.example.final_tp3.ui.views.fragments.FragOrder"
         android:label="fragment_frag_order"
         tools:layout="@layout/fragment_frag_order" >
         <argument

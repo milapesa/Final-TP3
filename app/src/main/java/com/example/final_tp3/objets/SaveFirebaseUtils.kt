@@ -8,9 +8,9 @@ object SaveFirebaseUtils {
     fun updateRestaurant(restaurant: Saveable) {
         val db = FirebaseFirestore.getInstance()
 
-        val restaurantID = restaurant.id  // Reemplaza con el ID de tu documento
+        val restaurantID = restaurant.id
         val updates = hashMapOf<String, Any>(
-            "saved" to restaurant.saved,  // Reemplaza con tus campos y valores
+            "saved" to restaurant.saved,
         )
 
         db.collection(Config.RESTAURANTS_COLECCTION).document(restaurantID)
@@ -25,9 +25,9 @@ object SaveFirebaseUtils {
     fun updateMenu(menu: Saveable) {
         val db = FirebaseFirestore.getInstance()
 
-        val restaurantID = menu.id  // Reemplaza con el ID de tu documento
+        val restaurantID = menu.id
         val updates = hashMapOf<String, Any>(
-            "saved" to menu.saved,  // Reemplaza con tus campos y valores
+            "saved" to menu.saved,
         )
 
         db.collection(Config.MENUS_COLECCTION).document(restaurantID)

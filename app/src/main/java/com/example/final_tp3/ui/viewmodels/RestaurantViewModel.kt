@@ -1,4 +1,4 @@
-package com.example.final_tp3.viewmodels
+package com.example.final_tp3.ui.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

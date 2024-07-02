@@ -1,4 +1,4 @@
-package com.example.final_tp3.ui.view.activities
+package com.example.final_tp3.ui.views.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,7 +6,6 @@ import android.os.Handler
 import android.os.Looper
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.example.final_tp3.MainActivity
 import com.example.final_tp3.R
 
 class SplashScreenActivity : AppCompatActivity() {

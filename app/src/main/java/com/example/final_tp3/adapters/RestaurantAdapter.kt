@@ -35,6 +35,15 @@ class RestaurantAdapter(
         }
         holder.saveRestaurant().setImageResource(if(restaurant.saved) R.drawable.ic_heart_fill else R.drawable.ic_heart_empty)
 
+        // deja un espacio al ultimo item del recycler view para que no se solape con el floating action button
+        val layoutParams = holder.itemView.layoutParams as ViewGroup.MarginLayoutParams
+        if (position == itemCount - 1) {
+            layoutParams.bottomMargin = (50 * holder.itemView.context.resources.displayMetrics.density).toInt()
+        } else {
+            layoutParams.bottomMargin = 0
+        }
+        holder.itemView.layoutParams = layoutParams
+
     }
 
 

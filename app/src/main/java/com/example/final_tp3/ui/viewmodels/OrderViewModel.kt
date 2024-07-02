@@ -16,10 +16,9 @@ import kotlinx.coroutines.launch
 
 class OrderViewModel() : ViewModel(), OnClickSaveItem {
 
-
-
     private val _menus = MutableLiveData<List<Menu>?>()
     val _restaurant = MutableLiveData<Restaurant>()
+    val isLoading = MutableLiveData<Boolean>()
     val menus: MutableLiveData<List<Menu>?> get() = _menus
 
     init {
@@ -27,6 +26,7 @@ class OrderViewModel() : ViewModel(), OnClickSaveItem {
     }
 
     private fun fetchMenus() {
+        isLoading.value = true
         val db = Firebase.firestore
         val menusList = mutableListOf<Menu>()
 
@@ -43,9 +43,11 @@ class OrderViewModel() : ViewModel(), OnClickSaveItem {
                     }
                 }
                 _menus.value = menusList
+                isLoading.value = false
             }
             .addOnFailureListener { exception ->
                 Log.w("firebase", "Error getting documents: ", exception)
+                isLoading.value = false
             }
     }
 

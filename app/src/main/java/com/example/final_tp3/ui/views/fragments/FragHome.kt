@@ -1,4 +1,4 @@
-package com.example.final_tp3.ui.view.fragments
+package com.example.final_tp3.ui.views.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,7 +14,7 @@ import com.example.final_tp3.adapters.RestaurantAdapter
 import com.example.final_tp3.data.Restaurant
 import com.example.final_tp3.databinding.FragmentFragHomeBinding
 import com.example.final_tp3.listeners.OnClickItemListener
-import com.example.final_tp3.viewmodels.RestaurantViewModel
+import com.example.final_tp3.ui.viewmodels.RestaurantViewModel
 
 class FragHome : Fragment(), OnClickItemListener {
 
@@ -54,8 +54,6 @@ class FragHome : Fragment(), OnClickItemListener {
         binding.FoodTypesRecyclerView.adapter = foodTypeAdapter
 
         setupSearchView()
-
-        // Initialize ViewModel and observe data
 
         restaurantViewModel.restaurants.observe(viewLifecycleOwner) { restaurants ->
             restaurants?.let {

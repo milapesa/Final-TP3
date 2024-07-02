@@ -1,11 +1,11 @@
-package com.example.final_tp3.ui.view.fragments
+package com.example.final_tp3.ui.views.fragments
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.isVisible
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -28,10 +28,6 @@ class FragOrder : Fragment() {
     private var filteredMenu = mutableListOf<Menu>()
     private lateinit var restaurant: Restaurant
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,8 +42,6 @@ class FragOrder : Fragment() {
             restaurant = tripArg
 
             preparateFragment(binding)
-
-            //searchMenus(tripArg, binding)
 
         }
 
@@ -80,6 +74,13 @@ class FragOrder : Fragment() {
         })
 
 
+        menuViewModel.isLoading.observe(viewLifecycleOwner) {
+            binding.layOrderProgressBar.isVisible = it
+        }
+
+
+
+
         return root
     }
 
@@ -95,7 +96,6 @@ class FragOrder : Fragment() {
         binding.layOrderButtonLike.setOnClickListener {
             menuViewModel.saveRestaurant()
         }
-        //binding.layOrderButtonLike.setImageResource(if(restaurant.saved) R.drawable.ic_heart_fill else R.drawable.ic_heart_empty)
         binding.recyclerOrder.setHasFixedSize(true)
         binding.recyclerOrder.layoutManager = LinearLayoutManager(context)
     }
